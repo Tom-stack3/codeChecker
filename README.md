@@ -27,8 +27,8 @@ percentage of each from the total lines:
   * tabs
   * spaces: 4 spaces each indentaion.
 * **Comments:**
-  * cannot break one-line comment to more than one line.  
-    use block comments instead.
+  * cannot break *one-line comment* to more than one line.  
+    Use *block comments* instead!
   * block comments (or multi line comments) shouldn't have any text in line with the opening and closing brackets.  
     :heavy_check_mark: valid:
     ```c
