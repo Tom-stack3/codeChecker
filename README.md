@@ -14,9 +14,9 @@ number of code lines: 189
 number of blank lines: 105
 ratio of code/comments =  0.753
 percentage of each from the total lines:
-comments takes 46%
-code takes 35%
-blank lines takes 19%
+ - comments takes 46%
+ - code takes 35%
+ - blank lines takes 19%
 ```
 
 ## coding style checked:
