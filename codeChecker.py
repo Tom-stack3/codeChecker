@@ -33,8 +33,6 @@ def read_init_paths(path, lines):
         print_error(error_msg)
         return False
 
-
-
 def print_data(num_comments,num_blank_lines):
     num_lines = len(lines)
     num_of_code_lines = num_lines - num_comments - num_blank_lines
@@ -106,7 +104,7 @@ def print_too_many_blank_lines(first_warning, line_num):
 
 
 def print_two_one_line_comments(first_warning, line_num):
-    warning = 'found two one line comments ( //bla bla ) one after another in line:'
+    warning = 'found two one line comments ( //comment_here ) one after another in line:'
     warning += str(line_num)
     if (first_warning):
         print_warning_header()
@@ -141,7 +139,7 @@ def work(lines):
 
             if len(line) < 4:
                 #check if empty space short line
-                if not re.search('[a-zA-Z0-9]', line):
+                if not re.search('[a-zA-Z0-9{}]', line):
                     print_empty_space_line(first_warning,line_num)
                     first_warning = False
                     num_blank_lines += 1
@@ -150,7 +148,7 @@ def work(lines):
                     first_warning = False
 
             # check is just an empty space
-            elif not re.search('[a-zA-Z0-9]', line):
+            elif not re.search('[a-zA-Z0-9{}]', line):
                 print_empty_space_line(first_warning, line_num)
                 first_warning = False
                 num_blank_lines += 1
@@ -167,7 +165,7 @@ def work(lines):
         elif is_in_comment_block and "*/" in line:
             # check if there is text in line with the end of the comment block:
             # bla bla */ - not valid
-            if re.search('[a-zA-Z0-9]', line):
+            if re.search('[a-zA-Z0-9{}]', line):
                 # not according to the coding style
                 print_comment_coding_style(first_warning, line_num)
                 first_warning = False
@@ -193,18 +191,18 @@ def work(lines):
         elif "/*" in line:
             #check if there is text in line with the start of the comment block:
             # /*textHere - not valid
-            if re.search('[a-zA-Z0-9]', line):
+            if re.search('[a-zA-Z0-9{}]', line):
                 # not according to the coding style
                 print_comment_coding_style(first_warning, line_num)
                 first_warning = False
             num_comments += 1
             is_in_comment_block = True
         # line is empty from chars
-        elif not re.search('[a-zA-Z0-9]', line):
+        elif not re.search('[a-zA-Z0-9{}]', line):
             num_blank_lines += 1
 
         #if not in comment block, and line is empty.
-        if not is_in_comment_block and not re.search('[a-zA-Z0-9]', line):
+        if not is_in_comment_block and not re.search('[a-zA-Z0-9{}]', line):
             num_blank_lines_in_row += 1
         else:
             num_blank_lines_in_row = 0
