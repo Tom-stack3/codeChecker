@@ -21,7 +21,7 @@ percentage of each from the total lines:
 
 ## coding style checked:
 * 120 character limit in each row. (comments included)
-* **indentaion**:  
+* **indentation**:  
   Can use only one method of indentaion from the following:
   * tabs
   * spaces: 4 spaces each indentaion.
