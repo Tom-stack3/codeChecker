@@ -67,5 +67,5 @@ percentage of each from the total lines:
  - blank lines takes 33%
 -------------------------------------
 ```
-
+![Screenshot](https://github.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
 ![Screenshot](Tom-stack3.github.com/codeChecker/images/run_with_warnings example.jpg)
