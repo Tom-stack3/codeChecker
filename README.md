@@ -45,4 +45,4 @@ percentage of each from the total lines:
     ```
 ## Run example:
 
-![run example](raw.githubusercontent.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
+![run example](https://raw.githubusercontent.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
