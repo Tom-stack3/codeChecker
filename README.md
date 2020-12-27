@@ -21,10 +21,11 @@ percentage of each from the total lines:
 
 ## coding style checked:
 * 120 character limit in each row. (comments included)
-* can use only one method of indentaion from the following:
+* **indentaion**:  
+  Can use only one method of indentaion from the following:
   * tabs
   * spaces: 4 spaces each indentaion.
-* comments:
+* **comments:**
   * cannot break one-line comment to more than one line.  
     use block comments instead.
   * block comments (or multi line comments) shouldn't have any text in line with the opening and closing brackets.  
