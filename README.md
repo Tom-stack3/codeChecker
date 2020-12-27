@@ -45,24 +45,33 @@ percentage of each from the total lines:
     ```
 ```diff
 ! WARNING!!
+```
 -------------------------------------
+```diff
 ! found an empty space line in line:
+```
 -------------------------------------
+```diff
 ! used less than 4 spaces as an indention in line:8
+```
 -------------------------------------
+```diff
 ! found too many blank lines consecutively in line:15
+```
 -------------------------------------
+```diff
 ! file uses both spaces and tabs as indention
+```
 -------------------------------------
 
-total number of lines: 18
-number of comment lines: 7
-number of code lines: 5
-number of blank lines: 6
-ratio of code/comments =  0.714
-percentage of each from the total lines:
- - comments takes 39%
- - code takes 28%
- - blank lines takes 33%
+**total number of lines: 18**
+**number of comment lines: 7**
+**number of code lines: 5**
+**number of blank lines: 6**
+**ratio of code/comments =  0.714**
+**percentage of each from the total lines:**
+** - comments takes 39%**
+** - code takes 28%**
+** - blank lines takes 33%**
 -------------------------------------
 ```
