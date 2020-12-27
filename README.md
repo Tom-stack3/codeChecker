@@ -4,7 +4,7 @@ It searches for some coding style problems (listed at the end of the file).
 In addition to that, it prints data about your code.\
 **Currently works only on c and c++ files.**
 
-## data printed in the end:
+## Data printed in the end:
 an example for a data summery looks like the following: 
 
 ```c
@@ -19,14 +19,14 @@ percentage of each from the total lines:
  - blank lines takes 19%
 ```
 
-## coding style checked:
+## Coding style checked:
 * 120 character limit in each row. (comments included)
-* not more than 2 blank lines between code lines.
-* **indentation**:  
+* Not more than 2 blank lines between code lines.
+* **Indentation**:  
   Can use only one method of indentaion from the following:
   * tabs
   * spaces: 4 spaces each indentaion.
-* **comments:**
+* **Comments:**
   * cannot break one-line comment to more than one line.  
     use block comments instead.
   * block comments (or multi line comments) shouldn't have any text in line with the opening and closing brackets.  
