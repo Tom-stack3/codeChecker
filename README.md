@@ -69,3 +69,4 @@ percentage of each from the total lines:
 ```
 ![plot](./images/run_with_warnings example.jpg)
 ![alt text](./images/run_with_warnings example.jpg)
+![Screenshot](./images/run_with_warnings example.jpg)
