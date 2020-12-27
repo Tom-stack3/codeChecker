@@ -21,6 +21,7 @@ percentage of each from the total lines:
 
 ## coding style checked:
 * 120 character limit in each row. (comments included)
+* not more than 2 blank lines between code lines.
 * **indentation**:  
   Can use only one method of indentaion from the following:
   * tabs
