@@ -3,6 +3,7 @@ import os
 os.system("color")
 
 SEPERATOR = "-------------------------------------"
+MAX_ROW_LENGTH = 120
 
 class bcolors:
     HEADER = '\033[95m'
@@ -81,8 +82,8 @@ def print_using_tab_and_spaces(first_warning):
         print_warning_header()
     print_warning(warning)
 
-def print_120_warning(first_warning, line_num):
-    warning = 'used more than 120 chars in line:'
+def print_row_length_warning(first_warning, line_num):
+    warning = 'used more than ' +str(MAX_ROW_LENGTH)+' chars in line:'
     warning += str(line_num)
     if (first_warning):
         print_warning_header()
@@ -122,11 +123,9 @@ def work(lines):
 
     #goes over the lines of the code
     for line in lines:
-        #check is went over 120 chars
-        if len(line) > 120:
-            print(line)
-            print(line)
-            print_120_warning(first_warning, line_num)
+        #check is went over MAX_ROW_LENGTH chars
+        if len(line) > MAX_ROW_LENGTH:
+            print_row_length_warning(first_warning, line_num)
             first_warning = False
 
         #check if using tab as an indention, and not in comment block
