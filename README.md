@@ -43,29 +43,6 @@ percentage of each from the total lines:
     /* comment here
     */
     ```
-```cmd
--------------------------------------
-! WARNING!!
--------------------------------------
-! found an empty space line in line:
--------------------------------------
-! used less than 4 spaces as an indention in line:8
--------------------------------------
-! found too many blank lines consecutively in line:15
--------------------------------------
-! file uses both spaces and tabs as indention
--------------------------------------
+## Run example:
 
-total number of lines: 18
-number of comment lines: 7
-number of code lines: 5
-number of blank lines: 6
-ratio of code/comments =  0.714
-percentage of each from the total lines:
- - comments takes 39%
- - code takes 28%
- - blank lines takes 33%
--------------------------------------
-```
-![Screenshot](https://raw.githubusercontent.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
-![Screenshot](Tom-stack3.github.com/codeChecker/images/run_with_warnings example.jpg)
+![run example](raw.githubusercontent.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
