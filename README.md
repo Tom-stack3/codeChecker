@@ -2,7 +2,9 @@
 Code checker is a python script that you can run on code files and get data on your files.  
 It searches for some coding style problems (listed at the end of the file).
 In addition to that, it prints data about your code.\
-**Currently works only on c and c++ files.**
+**Currently works only on c and c++ files.**  
+  
+*Originally made for course 89-110 Introduction to Computer Science, in Bar Ilan University.*
 
 ## Data printed in the end:
 an example for a data summery looks like the following: 
@@ -41,4 +43,3 @@ percentage of each from the total lines:
     /* comment here
     */
     ```
-//for: 89-110 Introduction to Computer Science, Bar Ilan.
