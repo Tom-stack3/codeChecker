@@ -18,9 +18,10 @@ class bcolors:
 def print_error(error_str):
     print(bcolors.FAIL + error_str + bcolors.ENDC)
 
-def readAndInitPaths(path, lines):
-
+def read_init_paths(path, lines):
     try:
+        #remove blank characters from beginning and end
+        path = path.strip()
         file = open(path, "r")
         for line in file:
             # delete the \n in the end of the line
@@ -34,7 +35,7 @@ def readAndInitPaths(path, lines):
 
 
 
-def printData(num_comments,num_blank_lines):
+def print_data(num_comments,num_blank_lines):
     num_lines = len(lines)
     num_of_code_lines = num_lines - num_comments - num_blank_lines
     print(bcolors.BOLD + "total number of lines:", num_lines)
@@ -53,73 +54,73 @@ def printData(num_comments,num_blank_lines):
     print(bcolors.ENDC)
     print(SEPERATOR)
 
-def printWarningHeader():
+def print_warning_header():
     print(SEPERATOR)
     print(bcolors.WARNING + "WARNING!!" + bcolors.ENDC)
     print(SEPERATOR)
 
-def printWarning(warning):
+def print_warning(warning):
     print(bcolors.WARNING + warning + bcolors.ENDC)
     print(SEPERATOR)
 
-def printCommentCodingStyle(firstWarning,line_num):
+def print_comment_coding_style(first_warning,line_num):
     warning = 'found a comment block not according to coding style in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
-def printSpaceWrongUsage(firstWarning,line_num):
+def print_space_wrong_usage(first_warning,line_num):
     warning = 'used less than 4 spaces as an indention in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
-def printUsingTabAndSpaces(firstWarning):
+def print_using_tab_and_spaces(first_warning):
     warning = 'file uses both spaces and tabs as indention'
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
-def print120Warning(firstWarning, line_num):
+def print_120_warning(first_warning, line_num):
     warning = 'used more than 120 chars in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
-def printEmptySpaceLine(firstWarning, line_num):
+def print_empty_space_line(first_warning, line_num):
     warning = 'found an empty space line in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
-def printTooManyBlankLines(firstWarning, line_num):
+def print_too_many_blank_lines(first_warning, line_num):
     warning = 'found too many blank lines consecutively in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
 
-def printTwoOneLineComments(firstWarning, line_num):
+def print_two_one_line_comments(first_warning, line_num):
     warning = 'found two one line comments ( //bla bla ) one after another in line:'
     warning += str(line_num)
-    if (firstWarning):
-        printWarningHeader()
-    printWarning(warning)
+    if (first_warning):
+        print_warning_header()
+    print_warning(warning)
 
 def work(lines):
     num_blank_lines_in_row = 0
     num_comments = 0
     num_blank_lines = 0
     line_num = 1
-    firstWarning = True
-    isInCommentBlock = False
-    usingTab = False
-    usingSpaces = False
+    first_warning = True
+    is_in_comment_block = False
+    using_tab = False
+    using_spaces = False
 
     #goes over the lines of the code
     for line in lines:
@@ -127,115 +128,109 @@ def work(lines):
         if len(line) > 120:
             print(line)
             print(line)
-            print120Warning(firstWarning, line_num)
-            firstWarning = False
+            print_120_warning(first_warning, line_num)
+            first_warning = False
 
         #check if using tab as an indention, and not in comment block
-        if not isInCommentBlock and '\t' in line:
-            usingTab = True
+        if not is_in_comment_block and '\t' in line:
+            using_tab = True
 
         # check if using space as an indention, and not in comment block
-        if not isInCommentBlock and len(line) > 0 and line[0] == ' ':
-            usingSpaces = True
+        if not is_in_comment_block and len(line) > 0 and line[0] == ' ':
+            using_spaces = True
 
             if len(line) < 4:
                 #check if empty space short line
                 if not re.search('[a-zA-Z0-9]', line):
-                    num_blank_lines_in_row += 1
-                    printEmptySpaceLine(firstWarning,line_num)
-                    firstWarning = False
+                    print_empty_space_line(first_warning,line_num)
+                    first_warning = False
                     num_blank_lines += 1
                 else:
-                    num_blank_lines_in_row = 0
-                    printSpaceWrongUsage(firstWarning, line_num)
-                    firstWarning = False
+                    print_space_wrong_usage(first_warning, line_num)
+                    first_warning = False
 
             # check is just an empty space
             elif not re.search('[a-zA-Z0-9]', line):
-                num_blank_lines_in_row += 1
-                printEmptySpaceLine(firstWarning, line_num)
-                firstWarning = False
+                print_empty_space_line(first_warning, line_num)
+                first_warning = False
                 num_blank_lines += 1
 
             #check is using the proper 4 spaces minimum
             elif line[0:4] != "    ":
-                num_blank_lines_in_row = 0
-                printSpaceWrongUsage(firstWarning, line_num)
-                firstWarning = False
+                print_space_wrong_usage(first_warning, line_num)
+                first_warning = False
 
         #we are in a comment block and the block hasn't ended
-        elif isInCommentBlock and "*/" not in line:
-            num_blank_lines_in_row = 0
+        elif is_in_comment_block and "*/" not in line:
             num_comments += 1
         # we are in a comment block and the block ended
-        elif isInCommentBlock and "*/" in line:
-            num_blank_lines_in_row = 0
+        elif is_in_comment_block and "*/" in line:
             # check if there is text in line with the end of the comment block:
             # bla bla */ - not valid
             if re.search('[a-zA-Z0-9]', line):
                 # not according to the coding style
-                printCommentCodingStyle(firstWarning, line_num)
-                firstWarning = False
+                print_comment_coding_style(first_warning, line_num)
+                first_warning = False
             num_comments += 1
-            isInCommentBlock = False
+            is_in_comment_block = False
 
         #regular one line comment
-        elif not isInCommentBlock and "//" in line:
-            num_blank_lines_in_row = 0
+        elif not is_in_comment_block and "//" in line:
             num_comments += 1
             #if the previous one was also a one line comment (//bla bla)
             if line_num > 1 and "//" in lines[line_num-2]:
-                printTwoOneLineComments(firstWarning, line_num)
-                firstWarning = False
+                print_two_one_line_comments(first_warning, line_num)
+                first_warning = False
 
         #the block is actually one line
         elif "/*" in line and "*/" in line:
-            num_blank_lines_in_row = 0
             #not according to the coding style
-            printCommentCodingStyle(firstWarning,line_num)
-            firstWarning = False
+            print_comment_coding_style(first_warning,line_num)
+            first_warning = False
             num_comments += 1
-            isInCommentBlock = True
+            is_in_comment_block = True
         #we start a comment block
         elif "/*" in line:
-            num_blank_lines_in_row = 0
             #check if there is text in line with the start of the comment block:
             # /*textHere - not valid
             if re.search('[a-zA-Z0-9]', line):
                 # not according to the coding style
-                printCommentCodingStyle(firstWarning, line_num)
-                firstWarning = False
+                print_comment_coding_style(first_warning, line_num)
+                first_warning = False
             num_comments += 1
-            isInCommentBlock = True
+            is_in_comment_block = True
         # line is empty from chars
         elif not re.search('[a-zA-Z0-9]', line):
+            num_blank_lines += 1
+
+        #if not in comment block, and line is empty.
+        if not is_in_comment_block and not re.search('[a-zA-Z0-9]', line):
             num_blank_lines_in_row += 1
-            #just a blank line
-            if " " not in line:
-                num_blank_lines += 1
+        else:
+            num_blank_lines_in_row = 0
 
         #if there are more than 2 blank lines in row
         if num_blank_lines_in_row > 2:
             num_blank_lines_in_row = 0
-            printTooManyBlankLines(firstWarning,line_num)
-            firstWarning = False
+            print_too_many_blank_lines(first_warning,line_num)
+            first_warning = False
 
         line_num += 1
 
 
     #forbidden to use both tabs and spaces as indention
-    if usingTab and usingSpaces:
-        printUsingTabAndSpaces(firstWarning)
-        firstWarning = False
+    if using_tab and using_spaces:
+        print_using_tab_and_spaces(first_warning)
+        first_warning = False
 
-    if firstWarning:
+    if first_warning:
         print()
         print(SEPERATOR)
         print(bcolors.OKCYAN + "no problems were found with the file" + bcolors.ENDC)
         print(SEPERATOR)
 
     print()
-    printData(num_comments,num_blank_lines)
+    print_data(num_comments,num_blank_lines)
 
 if __name__ == '__main__':
     finished = False
@@ -249,7 +244,7 @@ if __name__ == '__main__':
             finished = True
         elif user_input == "1":
             path = input("enter file path:")
-            succedded = readAndInitPaths(path, lines)
+            succedded = read_init_paths(path, lines)
             if succedded:
                 work(lines)
             print()
