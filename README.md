@@ -67,6 +67,5 @@ percentage of each from the total lines:
  - blank lines takes 33%
 -------------------------------------
 ```
-![plot](./images/run_with_warnings example.jpg)
-![alt text](./images/run_with_warnings example.jpg)
-![Screenshot](./images/run_with_warnings example.jpg)
+
+![Screenshot](Tom-stack3.github.com/codeChecker/images/run_with_warnings example.jpg)
