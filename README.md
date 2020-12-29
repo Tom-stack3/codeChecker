@@ -5,7 +5,7 @@ In addition to that, it prints data about your code.\
 **Currently works only on c and c++ files.**  
 
 * If you don't know how to run python files, read this [Tutorial](https://github.com/Tom-stack3/codeChecker/blob/main/HOW_RUN_EXE.md) to run an .exe file.  
-* If you know how to run python scripts, you are more than welcomed to download the python script and run it.
+* If you know how to run python scripts, you are more than welcome to download the python script and run it.
 
 
 ## Data printed in the end:
