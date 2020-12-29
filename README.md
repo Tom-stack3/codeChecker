@@ -7,7 +7,6 @@ In addition to that, it prints data about your code.\
 * If you don't know how to run python files, read this [Tutorial](https://github.com/Tom-stack3/codeChecker/blob/main/HOW_RUN_EXE.md)
 * If you know how to run python scripts, you are more than welcomed to download the python script and run it.
 
-*Originally made for course 89-110 Introduction to Computer Science, in Bar Ilan University.*
 
 ## Data printed in the end:
 an example for a data summery looks like the following: 
@@ -49,3 +48,6 @@ percentage of each from the total lines:
 ## Run example:
 
 ![run example](https://raw.githubusercontent.com/Tom-stack3/codeChecker/main/images/run_with_warnings%20example.jpg)  
+
+
+*Originally made for course "Introduction to Computer Science", in Bar Ilan University.*
