@@ -2,7 +2,7 @@
 Code checker is a python script that you can run on code files and get data on your files.  
 It searches for some coding style problems (listed at the end of the file).  
 In addition to that, it prints data about your code.\
-**Currently works only on c and c++ files.**  
+**Currently works only on C, C# and C++ files.**  
 
 * If you don't know how to run python files, read this [Tutorial](https://github.com/Tom-stack3/codeChecker/blob/main/HOW_RUN_EXE.md) to run an .exe file.  
 * If you know how to run python scripts, you are more than welcome to download the python script and run it.
