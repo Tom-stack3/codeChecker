@@ -1,4 +1,14 @@
 # Code Checker
+---
+**Disclaimer from future me**
+
+<sup>07.05.2022</sup>
+> I wrote this Python script a long time ago! As I read through these lines of code, I see that they are structured and written pretty poorly, and that the script is a bit buggy and doesn't really work well for regularly formatted files :(\
+But it did serve its purpose for checking checkstyle errors at the time and was indeed pretty handy.\
+So, I've decided to keep this repo for old times' sake 🙃
+
+---
+
 Code checker is a python script that you can run on code files and get data on your files.  
 It searches for some coding style problems (listed at the end of the file).  
 In addition to that, it prints data about your code.\
